@@ -338,7 +338,7 @@ public class Config
 	public static void setTimerTicks(int ticks)
 	{
 		timerTicks = ticks;
-		log("Timer delay set to " + timerTicks + " tick(s). That is roughly " + (timerTicks * 50) + "ms / " + (((double)timerTicks * 50.0) / 1000.0) + " seconds.");
+		log("Timer delay set to " + timerTicks + " tick(s). That is roughly " + (timerTicks * 50) + "ms / " + ((timerTicks * 50.0) / 1000.0) + " seconds.");
 		StartBorderTimer();
 		save(true);
 	}
@@ -355,7 +355,7 @@ public class Config
 			log("Remount delay set to 0. Players will be left dismounted when knocked back from the border while on a vehicle.");
 		else
 		{
-			log("Remount delay set to " + remountDelayTicks + " tick(s). That is roughly " + (remountDelayTicks * 50) + "ms / " + (((double)remountDelayTicks * 50.0) / 1000.0) + " seconds.");
+			log("Remount delay set to " + remountDelayTicks + " tick(s). That is roughly " + (remountDelayTicks * 50) + "ms / " + ((remountDelayTicks * 50.0) / 1000.0) + " seconds.");
 			if (ticks < 10)
 				logWarn("setting the remount delay to less than 10 (and greater than 0) is not recommended. This can lead to nasty client glitches.");
 		}

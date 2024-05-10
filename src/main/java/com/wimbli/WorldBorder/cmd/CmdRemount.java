@@ -29,7 +29,7 @@ public class CmdRemount extends WBCmd
 			sender.sendMessage(C_HEAD + "Remount delay set to 0. Players will be left dismounted when knocked back from the border while on a vehicle.");
 		else
 		{
-			sender.sendMessage(C_HEAD + "Remount delay set to " + delay + " tick(s). That is roughly " + (delay * 50) + "ms / " + (((double)delay * 50.0) / 1000.0) + " seconds. Setting to 0 would disable remounting.");
+			sender.sendMessage(C_HEAD + "Remount delay set to " + delay + " tick(s). That is roughly " + (delay * 50) + "ms / " + ((delay * 50.0) / 1000.0) + " seconds. Setting to 0 would disable remounting.");
 			if (delay < 10)
 				sender.sendMessage(C_ERR + "WARNING:" + C_DESC + " setting this to less than 10 (and greater than 0) is not recommended. This can lead to nasty client glitches.");
 		}

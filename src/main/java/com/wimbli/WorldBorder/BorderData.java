@@ -308,7 +308,7 @@ public class BorderData
 		safeOpenBlocks.add(Material.DETECTOR_RAIL);
 		safeOpenBlocks.add(Material.ACTIVATOR_RAIL);
 		safeOpenBlocks.add(Material.COBWEB);
-		safeOpenBlocks.add(Material.GRASS);
+		safeOpenBlocks.add(Material.SHORT_GRASS);
 		safeOpenBlocks.add(Material.FERN);
 		safeOpenBlocks.add(Material.DEAD_BUSH);
 		safeOpenBlocks.add(Material.DANDELION);
@@ -430,7 +430,7 @@ public class BorderData
 
 		// if Y is larger than the world can be and user can fly, return Y - Unless we are in the Nether, we might not want players on the roof
 		if (flying && Y > limTop && !isNether)
-			return (double) Y;
+			return Y;
 
 		// make sure Y values are within the boundaries of the world.
 		if (Y > limTop)
@@ -458,14 +458,14 @@ public class BorderData
 			if(y1 > limBot)
 			{
 				if (isSafeSpot(world, X, y1, Z, flying))
-					return (double)y1;
+					return y1;
 			}
 
 			// Look above.
 			if(y2 < limTop && y2 != y1)
 			{
 				if (isSafeSpot(world, X, y2, Z, flying))
-					return (double)y2;
+					return y2;
 			}
 		}
 

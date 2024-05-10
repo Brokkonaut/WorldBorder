@@ -7,7 +7,7 @@ package com.wimbli.WorldBorder.UUID;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.URL;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -86,7 +86,7 @@ public class UUIDFetcher {
 			return uuidCache.get(name);
 		}
 		try {
-			HttpURLConnection connection = (HttpURLConnection) new URL(String.format(UUID_URL, name, timestamp/1000)).openConnection();
+			HttpURLConnection connection = (HttpURLConnection) new URI(String.format(UUID_URL, name, timestamp/1000)).toURL().openConnection();
 			connection.setReadTimeout(5000);
 			UUIDFetcher data = gson.fromJson(new BufferedReader(new InputStreamReader(connection.getInputStream())), UUIDFetcher.class);
 			
@@ -122,7 +122,7 @@ public class UUIDFetcher {
 			return nameCache.get(uuid);
 		}
 		try {
-			HttpURLConnection connection = (HttpURLConnection) new URL(String.format(NAME_URL, UUIDTypeAdapter.fromUUID(uuid))).openConnection();
+			HttpURLConnection connection = (HttpURLConnection) new URI(String.format(NAME_URL, UUIDTypeAdapter.fromUUID(uuid))).toURL().openConnection();
 			connection.setReadTimeout(5000);
 			UUIDFetcher[] nameHistory = gson.fromJson(new BufferedReader(new InputStreamReader(connection.getInputStream())), UUIDFetcher[].class);
 			UUIDFetcher currentNameData = nameHistory[nameHistory.length - 1];
