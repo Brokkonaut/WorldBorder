@@ -281,7 +281,7 @@ public class WorldFileData
 
 
 	// crude chunk map PNG image output, for debugging
-	private void testImage(CoordXZ region, List<Boolean> data) {
+	protected void testImage(CoordXZ region, List<Boolean> data) {
 		int width = 32;
 		int height = 32;
 		BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
